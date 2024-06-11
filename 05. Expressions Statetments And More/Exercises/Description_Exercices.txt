@@ -1,0 +1,241 @@
+
+Exercice 1 : Positif, Négatif ou Zéro
+==============================================
+
+
+Écrivez une méthode appelée checkNumber avec un paramètre int nommé number.
+
+
+
+La méthode ne doit renvoyer aucune valeur et doit afficher :
+
+    - " positive" si le numéro du paramètre est >0
+
+    - " negative" si le numéro du paramètre est <0
+
+    - " zero" si le numéro du paramètre est égal à0
+
+REMARQUE : La méthode checkNumber doit être définie comme public static nous l'avons fait jusqu'à présent dans le cours.
+
+REMARQUE : n'ajoutez pas de méthode main à votre code de solution !
+
+
+Exercice 2 : Convertisseur de vitesse
+==========================================
+
+1. Écrivez une méthode appelée toMilesPerHour qui a 1 paramètre de type double avec le nom kilomètresPerHour.
+Cette méthode doit renvoyer la valeur arrondie du calcul de type long.
+Si le paramètre kilomètresPerHour est inférieur à 0, la méthode toMilesPerHour doit renvoyer -1 pour indiquer une valeur non valide.
+Sinon, s'il est positif, calculez la valeur des miles par heure, arrondissez-la et renvoyez-la.
+Pour la conversion et l'arrondi, vérifiez les notes dans le texte ci-dessous.
+
+
+
+Exemples d'entrée/sortie :
+
+toMilesPerHour(1.5);→ devrait renvoyer la valeur 1
+
+toMilesPerHour(10.25);→ devrait renvoyer la valeur 6
+
+toMilesPerHour(-5.6);→ devrait renvoyer la valeur -1
+
+toMilesPerHour(25.42);→ devrait renvoyer la valeur 16
+
+toMilesPerHour(75.114);→ devrait renvoyer la valeur 47
+
+
+
+2. Écrivez une autre méthode appelée printConversion avec 1 paramètre de type double portant le nom kilomètresPerHour.
+Cette méthode ne doit rien renvoyer (void) et doit calculer milesPerHour à partir du paramètre kilomètresPerHour.
+Ensuite, il doit imprimer un message au format "XX km/h = YY mi/h".
+XX représente la valeur d'origine kilomètresParHour.
+YY représente les milesPerHour arrondis du paramètre kilomètresPerHour.
+Si le paramètre kilomètresParHour est < 0 alors imprimez le texte "Invalid Value".
+
+
+
+Exemples d'entrée/sortie :
+
+printConversion(1.5);→ devrait imprimer le texte suivant (dans la console - System.out) : 1,5 km/h = 1 mi/h
+printConversion(10.25);→ devrait imprimer le texte suivant (dans la console - System.out) : 10,25 km/h = 6 mi/h
+printConversion(-5.6);→ devrait imprimer le texte suivant (dans la console - System.out) : Valeur invalide
+printConversion(25.42);→ devrait imprimer le texte suivant (dans la console - System.out) : 25,42 km/h = 16 mi/h
+printConversion(75.114);→ devrait imprimer le texte suivant (dans la console - System.out) : 75,114 km/h = 47 mi/h
+
+
+Utilisez la méthode Math.round pour arrondir le nombre de miles par heure calculé (double). La méthode round renvoie long.
+
+Comment utiliser la méthode round et comment ça marche ?
+Math.round () est une méthode mathématique intégrée qui renvoie le long le plus proche de l'argument. Le résultat est arrondi à un nombre entier en ajoutant 1/2, en prenant la valeur du résultat après avoir ajouté 1/2 et en transtypant le résultat en type long. La méthode renvoie la valeur de l'argument arrondie à la valeur entière la plus proche.
+
+USAGE EXAMPLE:
+
+nombre double = 1,5 ;
+long arrondi = Math . rond ( nombre );
+Système . dehors . println ( "arrondi = " + arrondi );
+Système . dehors . println ( "avec 3.9= " + Math . round ( 3.9 ));
+Système . dehors . println ( "avec 4.5= " + Math . round ( 4.5 ));
+somme int = 45 ;
+nombre int = 10 ;
+
+
+// transtypage donc le résultat est double, par exemple double / int -> double
+double moyenne = ( double ) somme / compte ;
+long arrondiMoyenne = Math . rond ( moyen );
+Système . dehors . println ( "moyenne= " + moyenne );
+Système . dehors . println ( "roundedAverage= " + roundAverage );
+
+
+SORTIR:
+
+arrondi = 2
+avec 3,9 = 4
+avec 4,5 = 5
+moyenne = 4,5
+arrondiMoyenne = 5
+
+
+CONSEIL : Dans la méthode printConversion, appelez la méthode toMilesPerHour au lieu de dupliquer le code.
+
+REMARQUE : toutes les méthodes doivent être définies comme publiques statiques, comme nous l'avons fait jusqu'à présent dans le cours.
+
+REMARQUE : 1 mile par heure équivaut à 1,609 kilomètres par heure
+
+REMARQUE : n'ajoutez pas de méthode principale au code de la solution.
+
+
+Convertisseur de mégaoctets
+=============================================
+Écrivez une méthode appelée  printMegaBytesAndKiloBytes  qui a  1 paramètre de type  int  avec le nom  kiloBytes .
+
+La méthode  ne doit rien renvoyer ( void ) et doit calculer les mégaoctets et les kilo-octets restants à partir du  paramètre kilobytes  .
+
+Ensuite, il doit imprimer un message au format  "XX KB = YY MB et ZZ KB".
+
+XX  représente la valeur d'origine  kiloBytes .
+YY  représente les  mégaoctets calculés .
+ZZ  représente les  kilo-octets restants calculés .
+
+Par exemple, lorsque le paramètre  kiloBytes  est  de 2 500  , il faut  afficher "2 500 Ko = 2 Mo et 452 Ko".
+
+Si le paramètre  kiloBytes  est  inférieur à 0  alors  imprimez  le texte  "Invalid Value" .
+
+EXEMPLE D'ENTRÉE/SORTIE
+
+printMegaBytesAndKiloBytes(2500); →  doit  imprimer  le texte suivant : "2500 Ko = 2 Mo et 452 Ko"
+
+printMegaBytesAndKiloBytes(-1024); →  doit  imprimer  le texte suivant : " Valeur invalide"  car le paramètre est inférieur à 0.
+
+printMegaBytesAndKiloBytes(5000); →  doit  imprimer  le texte suivant : " 5000 Ko = 4 Mo et 904 Ko"
+
+
+
+CONSEIL :  Faites extrêmement attention aux espaces dans le message imprimé.
+
+CONSEIL : utilisez l'opérateur reste
+
+CONSEIL :  1 Mo = 1 024 Ko
+
+REMARQUE :  Ne définissez pas  la valeur du paramètre kilo-octets  dans votre méthode .
+
+REMARQUE :  La solution ne sera pas acceptée s'il y a  des espaces supplémentaires .
+
+REMARQUE :  La  méthode printMegaBytesAndKiloBytes  doit être définie comme  publique statique, comme nous l'avons fait jusqu'à présent dans le cours.
+REMARQUE :  n'ajoutez pas de   méthode principale  au code de la solution.
+
+
+Chien qui aboie
+=====================
+Nous avons un chien qui aime aboyer. Il faut se réveiller si le chien aboie la nuit !
+
+Écrivez une méthode  ShouldWakeUp  qui a  2 paramètres.
+
+Le 1er paramètre  doit être de type  booléen  et être nommé  aboiement, il représente si notre chien aboie actuellement.
+Le 2ème paramètre  représente l'  heure du jour  et est de type  int  avec le nom  hourOfDay  et a une plage valide de  0-23 .
+
+Nous devons nous réveiller si le chien aboie  avant 8 heures ou après 22 heures  donc dans ce cas,  retournez true .
+
+Dans tous les autres cas,  retournez false .
+
+Si le paramètre hourOfDay est  inférieur à 0  ou  supérieur à 23,  renvoie  false .
+
+Exemples d'entrée/sortie :
+
+shouldWakeUp (true, 1); → devrait retourner  vrai
+
+shouldWakeUp (false, 2); → devrait renvoyer false puisque le  chien n'aboie pas .
+
+shouldWakeUp (true, 8); → devrait renvoyer false, puisque ce n'est pas avant 8.
+
+shouldWakeUp (true, -1); → devrait renvoyer false puisque le  paramètre hourOfDay  doit être compris entre  0 et 23 .
+
+
+
+CONSEIL :  utilisez l'instruction if else avec plusieurs conditions.
+
+REMARQUE :  La  méthode ShouldWakeUp doit être définie comme  public static comme nous l'avons fait jusqu'à présent dans le cours.
+
+REMARQUE :  n'ajoutez pas de   méthode principale  au code de la solution.
+
+
+Calculateur d'année bissextile
+========================================
+Écrivez une méthode isLeapYear avec un paramètre de type int nommé year .
+
+Le paramètre doit être  supérieur ou égal à 1  et  inférieur ou égal à 9999. Si le paramètre n'est pas dans cette plage, renvoyez  false .
+
+Sinon, s'il se situe dans la plage valide, calculez si l'année est une année bissextile et renvoyez  true  si c'est une année bissextile, sinon renvoyez  false .
+
+
+
+Pour déterminer si une année est une année bissextile, suivez ces étapes :
+1. Si l'année est  divisible par  4 , passez à l'étape 2. Sinon, passez à l'étape 5.
+2. Si l'année est  divisible par 100 , passez à étape 3. Sinon, passez à l'étape 4.
+3. Si l'année est  divisible par 400 , passez à l'étape 4. Sinon, passez à l'étape 5.
+4. L'année est une année bissextile (elle compte 366 jours). La méthode  isLeapYear  doit renvoyer  true.
+5. L’année n’est pas bissextile (elle compte 365 jours). La méthode  isLeapYear  doit renvoyer  false .
+
+
+
+Une autre façon de dire est :
+
+Une année bissextile est une année divisible par 4 mais pas par 100.
+
+S'il est divisible par 100, il doit être divisible par 400.
+
+
+
+Les années suivantes  ne sont pas bissextiles :
+1700, 1800, 1900, 2100, 2200, 2300, 2500, 2600.
+En effet, elles sont  divisibles par 100 mais pas par 400.
+
+
+Les années suivantes  sont bissextiles :
+1600, 2000, 2400.
+En effet, elles sont  divisibles également par 100 et 400 .
+
+
+
+Exemples d'entrée/sortie :
+
+isLeapYear(-1600); → devrait  renvoyer  false  puisque le paramètre n'est  pas dans la plage (1-9999)
+
+isLeapYear(1600); → devrait  renvoyer vrai  puisque 1600 est une année bissextile
+
+isLeapYear(2017); → devrait  renvoyer false puisque 2017 n'est  pas  une année bissextile
+
+isLeapYear(2000);  → devrait  renvoyer vrai  car 2000 est une année bissextile
+
+REMARQUE :  La méthode  isLeapYear  doit être définie comme  public static  comme nous l'avons fait jusqu'à présent dans le cours.
+REMARQUE :  n'ajoutez pas de   méthode principale  au code de la solution.
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+package dev.lpa;
+
+import java.io.IOException;
+import java.nio.file.AccessDeniedException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Comparator;
+import java.util.stream.Collectors;
+
+public class ChallengeStreams {
+
+	public static void main(String[] args) {
+
+		Path startingPath = Path.of(".");
+		int index = startingPath.getNameCount();
+		try (var paths = Files.walk(startingPath, Integer.MAX_VALUE)) {
+			paths
+					.filter(p -> !p.endsWith("$Recycle.Bin")) // Excluding the problematic directory
+					.filter(Files::isRegularFile)
+					.collect(Collectors.groupingBy(p -> p.subpath(index, index + 1),
+							/*Collectors.summarizingLong(
+									(p -> {
+										try {
+											return Files.size(p);
+										} catch (IOException e) {
+											throw new RuntimeException(e);
+										}
+									}))*/
+							Collectors.summarizingLong(
+											p -> p.toFile().length())
+					))
+					.entrySet()
+					.stream()
+					.filter(e -> e.getValue().getSum() > 50_000)
+					.sorted(Comparator.comparing(e -> e.getKey().toString()))
+					.forEach(e-> {
+						System.out.printf("[%s] %,d bytes, %d files %n",
+								e.getKey(), e.getValue().getSum(), e.getValue().getCount());
+					});
+		} catch (AccessDeniedException e) {
+			System.err.println("Access to a file is denied: " + e.getMessage());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

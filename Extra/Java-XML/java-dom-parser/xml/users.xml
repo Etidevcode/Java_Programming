@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Users [
+        <!ELEMENT Users (User)*>
+        <!ELEMENT User (id|firstName|lastName|age|gender)*>
+        <!ELEMENT id (#PCDATA)>
+        <!ELEMENT firstName (#PCDATA)>
+        <!ELEMENT lastName (#PCDATA)>
+        <!ELEMENT age (#PCDATA)>
+        <!ELEMENT gender (#PCDATA)>
+        ]>
+<Users>
+    <User>
+        <id>1</id>
+        <firstName>Ramesh</firstName>
+        <lastName>Fadatare</lastName>
+        <age>28</age>
+        <gender>Male</gender>
+    </User>
+    <User>
+        <id>2</id>
+        <firstName>John</firstName>
+        <lastName>Cena</lastName>
+        <age>45</age>
+        <gender>Male</gender>
+    </User>
+    <User>
+        <id>3</id>
+        <firstName>Tom</firstName>
+        <lastName>Cruise</lastName>
+        <age>40</age>
+        <gender>Male</gender>
+    </User>
+</Users>

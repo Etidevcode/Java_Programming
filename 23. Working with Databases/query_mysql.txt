@@ -1,0 +1,112 @@
+mysql> CREATE DATABASE `testdb`;
+
+mysql> use testdb;
+Database changed
+
+
+mysql> create table contacts (name text, phone integer, email text);
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> show tables;
++------------------+
+| Tables_in_testdb |
++------------------+
+| contacts         |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> insert into contacts (name, phone, email) values('Etienne', 6545678, 'etienne@mail.com');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select* from contacts;
++---------+---------+------------------+
+| name    | phone   | email            |
++---------+---------+------------------+
+| Etienne | 6545678 | etienne@mail.com |
++---------+---------+------------------+
+1 row in set (0.00 sec)
+
+mysql> insert into contacts values ('joe', 6789812, 'joe@mail.com');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into contacts values ('steve', 6542387, 'steve@mail');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into contacts values('brian', 789258, 'brian@mail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from contacts;
++---------+---------+------------------+
+| name    | phone   | email            |
++---------+---------+------------------+
+| Etienne | 6545678 | etienne@mail.com |
+| joe     | 6789812 | joe@mail.com     |
+| steve   | 6542387 | steve@mail       |
+| brian   |  789258 | brian@mail.com   |
++---------+---------+------------------+
+4 rows in set (0.01 sec)
+
+mysql> update contacts
+    -> set name = 'etienne'
+    -> where id = 1;
+ERROR 1054 (42S22): Unknown column 'id' in 'where clause'
+mysql> update contacts
+    -> set name = 'etienne'
+    -> where phone = 6545678;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from contacts;
++---------+---------+------------------+
+| name    | phone   | email            |
++---------+---------+------------------+
+| etienne | 6545678 | etienne@mail.com |
+| joe     | 6789812 | joe@mail.com     |
+| steve   | 6542387 | steve@mail       |
+| brian   |  789258 | brian@mail.com   |
++---------+---------+------------------+
+4 rows in set (0.00 sec)
+
+mysql> update contacts
+    -> set email = 'steve@mail.com'
+    -> where name = 'steve';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update contacts
+    -> set phone = '6789258'
+    -> where name = 'brian';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from contacts;
++---------+---------+------------------+
+| name    | phone   | email            |
++---------+---------+------------------+
+| etienne | 6545678 | etienne@mail.com |
+| joe     | 6789812 | joe@mail.com     |
+| steve   | 6542387 | steve@mail.com   |
+| brian   | 6789258 | brian@mail.com   |
++---------+---------+------------------+
+4 rows in set (0.00 sec)
+
+mysql> insert into contacts values('missy', 87654321, 'missy@email.com.au');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> update contacts
+    -> set phone = 7654321
+    -> where name = 'missy';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from contacts;
++---------+---------+--------------------+
+| name    | phone   | email              |
++---------+---------+--------------------+
+| etienne | 6545678 | etienne@mail.com   |
+| joe     | 6789812 | joe@mail.com       |
+| steve   | 6542387 | steve@mail.com     |
+| brian   | 6789258 | brian@mail.com     |
+| missy   | 7654321 | missy@email.com.au |
++---------+---------+--------------------+
+5 rows in set (0.00 sec)

@@ -1,0 +1,11 @@
+Directory Contents: 
+C:\Java-Programming-Masterclass-updated-to-java17\public
+C:\Java-Programming-Masterclass-updated-to-java17\public\assets
+C:\Java-Programming-Masterclass-updated-to-java17\public\assets\icons
+C:\Java-Programming-Masterclass-updated-to-java17\public\assets\icons\index.txt
+C:\Java-Programming-Masterclass-updated-to-java17\public\assets\icons\indexCopy.txt
+C:\Java-Programming-Masterclass-updated-to-java17\public\assets\index.txt
+C:\Java-Programming-Masterclass-updated-to-java17\public\assets\indexCopy.txt
+C:\Java-Programming-Masterclass-updated-to-java17\public\index.txt
+C:\Java-Programming-Masterclass-updated-to-java17\public\indexCopy.txt
+Generated: 2023-10-31T13:19:05.946503700

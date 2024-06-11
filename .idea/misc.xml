@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Section22-JavaFX/HelloWoldFX/pom.xml" />
+        <option value="$PROJECT_DIR$/Jackson-tutorial/pom.xml" />
+        <option value="$PROJECT_DIR$/jackson-tutorial/pom.xml" />
+        <option value="$PROJECT_DIR$/json-tutorial/pom.xml" />
+        <option value="$PROJECT_DIR$/Extra_Information/json-tutorial/pom.xml" />
+        <option value="$PROJECT_DIR$/java-json-processing/pom.xml" />
+        <option value="$PROJECT_DIR$/Extra_Information/java-json-processing/pom.xml" />
+        <option value="$PROJECT_DIR$/java-jdom-parser/pom.xml" />
+        <option value="$PROJECT_DIR$/Extra_Information/Java-JSON/json-tutorial/pom.xml" />
+        <option value="$PROJECT_DIR$/Extra_Information/Java-JSON/java-json-processing/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Jackson-tutorial/pom.xml" />
+        <option value="$PROJECT_DIR$/jackson-tutorial/pom.xml" />
+      </set>
+    </option>
+    <option name="workspaceImportForciblyTurnedOn" value="true" />
+  </component>
+  <component name="ProjectResources">
+    <resource url="http://javafx.com/fxml" location="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

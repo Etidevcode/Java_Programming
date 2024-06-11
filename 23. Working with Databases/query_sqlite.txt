@@ -1,0 +1,138 @@
+>sqlite3
+
+>sqlite3 test.db
+SQLite version 3.43.2 2023-10-10 12:14:04
+Enter ".help" for usage hints.
+sqlite> .help
+
+.archive ...             Manage SQL archives
+.auth ON|OFF             Show authorizer callbacks
+.backup ?DB? FILE        Backup DB (default "main") to FILE
+.bail on|off             Stop after hitting an error.  Default OFF
+.cd DIRECTORY            Change the working directory to DIRECTORY
+.changes on|off          Show number of rows changed by SQL
+.check GLOB              Fail if output since .testcase does not match
+.clone NEWDB             Clone data into NEWDB from the existing database
+.connection [close] [#]  Open or close an auxiliary database connection
+.crnl on|off             Translate \n to \r\n.  Default ON
+.databases               List names and files of attached databases
+.dbconfig ?op? ?val?     List or change sqlite3_db_config() options
+.dbinfo ?DB?             Show status information about the database
+.dump ?OBJECTS?          Render database content as SQL
+.echo on|off             Turn command echo on or off
+.eqp on|off|full|...     Enable or disable automatic EXPLAIN QUERY PLAN
+.excel                   Display the output of next command in spreadsheet
+.exit ?CODE?             Exit this program with return-code CODE
+.expert                  EXPERIMENTAL. Suggest indexes for queries
+.explain ?on|off|auto?   Change the EXPLAIN formatting mode.  Default: auto
+.filectrl CMD ...        Run various sqlite3_file_control() operations
+.fullschema ?--indent?   Show schema and the content of sqlite_stat tables
+.headers on|off          Turn display of headers on or off
+.help ?-all? ?PATTERN?   Show help text for PATTERN
+.import FILE TABLE       Import data from FILE into TABLE
+.indexes ?TABLE?         Show names of indexes
+.limit ?LIMIT? ?VAL?     Display or change the value of an SQLITE_LIMIT
+.lint OPTIONS            Report potential schema issues.
+.load FILE ?ENTRY?       Load an extension library
+.log FILE|on|off         Turn logging on or off.  FILE can be stderr/stdout
+.mode MODE ?OPTIONS?     Set output mode
+.nonce STRING            Suspend safe mode for one command if nonce matches
+.nullvalue STRING        Use STRING in place of NULL values
+.once ?OPTIONS? ?FILE?   Output for the next SQL command only to FILE
+.open ?OPTIONS? ?FILE?   Close existing database and reopen FILE
+.output ?FILE?           Send output to FILE or stdout if FILE is omitted
+.parameter CMD ...       Manage SQL parameter bindings
+.print STRING...         Print literal STRING
+.progress N              Invoke progress handler after every N opcodes
+.prompt MAIN CONTINUE    Replace the standard prompts
+.quit                    Stop interpreting input stream, exit if primary.
+.read FILE               Read input from FILE or command output
+.recover                 Recover as much data as possible from corrupt db.
+.restore ?DB? FILE       Restore content of DB (default "main") from FILE
+.save ?OPTIONS? FILE     Write database to FILE (an alias for .backup ...)
+.scanstats on|off|est    Turn sqlite3_stmt_scanstatus() metrics on or off
+.schema ?PATTERN?        Show the CREATE statements matching PATTERN
+.separator COL ?ROW?     Change the column and row separators
+.session ?NAME? CMD ...  Create or control sessions
+.sha3sum ...             Compute a SHA3 hash of database content
+.shell CMD ARGS...       Run CMD ARGS... in a system shell
+.show                    Show the current values for various settings
+.stats ?ARG?             Show stats or turn stats on or off
+.system CMD ARGS...      Run CMD ARGS... in a system shell
+.tables ?TABLE?          List names of tables matching LIKE pattern TABLE
+.timeout MS              Try opening locked tables for MS milliseconds
+.timer on|off            Turn SQL timer on or off
+.trace ?OPTIONS?         Output each SQL statement as it is run
+.version                 Show source, library and compiler versions
+.vfsinfo ?AUX?           Information about the top-level VFS
+.vfslist                 List all available VFSes
+.vfsname ?AUX?           Print the name of the VFS stack
+.width NUM1 NUM2 ...     Set minimum column widths for columnar output
+
+
+sqlite> .headers on
+sqlite> create table contacts(name text, phone integer, email text);
+sqlite> insert into contacts (name, phone, email) values('Tim', 3545678, 'tim@email.com');
+sqlite> select * from contacts;
+sqlite> select email from contacts;
+sqlite> insert into contacts values('Brian', 1234, 'brian@email.com');
+sqlite> insert into contacts (name, phone) values('Steve', 87654);
+sqlite> select * from contacts;
+sqlite> select * from contacts;
+sqlite> .backup testbackup
+sqlite> update contacts set email='steve@hisemail.com';
+sqlite> select * from contacts;
+sqlite> .restore testbackup;
+sqlite> select * from contacts;
+Parse error: no such table: contacts
+sqlite> .restore testbackup
+sqlite> select * from contacts;
+sqlite> update contacts set email='steve@hisemail.com' where name='Steve';
+sqlite> select * from contacts;
+sqlite> select * from contacts where name = 'Brian';
+sqlite> select phone, email from contacts where name = 'Brian';
+sqlite> delete from contacts where phone=1234;
+sqlite> select * from contacts;
+sqlite> .tables
+sqlite> .schema
+sqlite> .dump
+sqlite> .exit
+
+
+sqlite3 music.db
+SQLite version 3.43.2 2023-10-10 12:14:04
+Enter ".help" for usage hints.
+sqlite> .tables
+sqlite> .schema
+sqlite> select * from artists;
+sqlite> select name from albums where _id=367;
+sqlite> select * from albums where _id=367;
+sqlite> .headers
+Usage: .headers on|off
+sqlite> .headers on
+sqlite> select * from albums where _id=367;
+sqlite> .backup music-backup1
+sqlite> .schema
+sqlite> insert into artists (name) values('Beyonce');
+sqlite> select * from artists;
+sqlite> select * from artists order by name;
+sqlite> select * from albums order by name;
+sqlite> select * from albums order by name collate nocase;
+sqlite> select * from albums order by artist, name collate nocase;
+sqlite> select * from songs order by album;
+sqlite> select * from albums where _id = 439
+sqlite> select * from artists where _id = 133;
+sqlite> select songs.track, songs.title, albums.name from songs join albums on songs.album = albums._id;
+sqlite> select songs.track, songs.title, albums.name from songs join albums on songs.album = albums._id;
+sqlite> select track, title, name from songs join albums on songs.album = albums._id;
+sqlite> select songs.track, songs.title, albums.name from songs inner join albums on songs.album = albums._id;
+sqlite> select songs.track, songs.title, albums.name from songs inner join albums on songs.album = albums._id order by albums.name,songs.track;
+sqlite> select artists.name,albums.name from albums inner join artists on albums.artist = artists._id order by artists.name;
+
+
+
+
+
+
+
+
